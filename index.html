@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>European Pied-à-Terre — Master Prospect File, 25 Cities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,700;1,6..72,300;1,6..72,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#181A1E;--paper:#E5E1D8;--card:#DAD6CC;--card2:#F0ECE4;
+  --brass:#8B6B2A;--blit:#C49640;--verd:#3A5C4C;--vdim:#6A8878;
+  --slate:#3A4452;--rust:#7A3530;--plum:#5A3A5C;
+  --ln:rgba(24,26,30,0.12);--lns:rgba(24,26,30,0.26);
+  --dis:'Newsreader',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace;--sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;font-size:15px;}
+a{color:var(--ink);}
+a:focus-visible{outline:2px solid var(--brass);outline-offset:2px;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle at 1px 1px,rgba(24,26,30,0.025) 1px,transparent 0);background-size:3px 3px;z-index:0;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
+header.cover{padding:54px 0 42px;border-bottom:2px solid var(--ink);}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;opacity:0.5;display:flex;gap:18px;flex-wrap:wrap;margin-bottom:20px;}
+h1.title{font-family:var(--dis);font-weight:700;font-size:clamp(30px,5vw,54px);line-height:1.04;letter-spacing:-0.015em;margin-bottom:10px;}
+h1.title em{font-style:italic;color:var(--brass);}
+.subtitle{font-size:14.5px;max-width:680px;color:rgba(24,26,30,0.72);line-height:1.65;margin-bottom:26px;}
+.covgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));border:1px solid var(--lns);}
+.cgc{padding:12px 15px;border-right:1px solid var(--ln);}
+.cgc:last-child{border-right:none;}
+.cgc .k{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.5;display:block;margin-bottom:3px;}
+.cgc .v{font-family:var(--dis);font-size:15px;font-weight:700;}
+nav.bar{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--lns);padding:10px 0;backdrop-filter:blur(4px);}
+nav.bar .wrap{display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
+.nlbl{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.45;margin-right:2px;white-space:nowrap;}
+nav.bar a{font-family:var(--mono);font-size:9.5px;text-decoration:none;border:1px solid var(--lns);padding:3px 8px;background:var(--card);white-space:nowrap;transition:background .13s,color .13s;}
+nav.bar a:hover{background:var(--ink);color:var(--paper);}
+nav.bar a.il{border-color:var(--brass);color:var(--brass);}
+nav.bar a.il:hover{background:var(--brass);color:var(--paper);}
+.ndiv{width:1px;height:14px;background:var(--lns);margin:0 3px;flex-shrink:0;}
+.badge{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;font-weight:600;padding:3px 8px;border:1.5px solid currentColor;text-transform:uppercase;border-radius:2px;}
+.badge.t1{color:var(--verd);}.badge.t2{color:var(--slate);}.badge.t3{color:var(--plum);}
+.badge.open{color:var(--verd);}.badge.watch{color:var(--brass);}.badge.caution{color:var(--rust);}.badge.wc{color:var(--slate);}
+.legend-row{display:flex;gap:16px;flex-wrap:wrap;padding:18px 0 4px;font-size:12.5px;}
+.legend-row .item{display:flex;align-items:center;gap:7px;}
+.is{margin-bottom:28px;border:1px solid var(--lns);background:var(--card2);}
+.is-head{padding:16px 20px 14px;border-bottom:1px solid var(--ln);}
+.is-head h3{font-family:var(--dis);font-size:21px;font-weight:700;margin-bottom:3px;}
+.is-head p{font-size:13px;color:rgba(24,26,30,0.62);}
+.is-body{padding:18px 20px 20px;}
+.acqtbl{width:100%;border-collapse:collapse;font-size:12.5px;}
+.acqtbl th{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:0.07em;text-align:left;padding:7px 10px;background:var(--card);border-bottom:2px solid var(--lns);white-space:nowrap;}
+.acqtbl td{padding:7px 10px;border-bottom:1px solid var(--ln);}
+.acqtbl tr:hover td{background:rgba(24,26,30,0.03);}
+.acqtbl td.num{font-family:var(--mono);font-size:11.5px;}
+.acqtbl td.tot{font-weight:600;}
+.acqtbl td.lo{color:var(--verd);}.acqtbl td.mid{color:var(--brass);}.acqtbl td.hi{color:var(--rust);}
+.acqtbl .nc{font-size:11.5px;color:rgba(24,26,30,0.55);font-style:italic;}
+.taxgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1px;background:var(--ln);}
+.ti{background:var(--card2);padding:15px 17px;}
+.ti .tilbl{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--rust);margin-bottom:5px;display:block;}
+.ti h4{font-family:var(--dis);font-size:15.5px;font-weight:700;margin-bottom:4px;}
+.ti p{font-size:12px;line-height:1.6;color:rgba(24,26,30,0.78);}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;}
+.pc{padding:13px 15px;border:1px solid var(--lns);background:var(--card);}
+.pc .cn{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--slate);margin-bottom:7px;display:block;}
+.pc a{display:block;font-size:12.5px;text-decoration:none;color:var(--brass);margin-bottom:3px;}
+.pc a:hover{text-decoration:underline;}
+.pc .pn{font-size:11.5px;color:rgba(24,26,30,0.55);margin-top:5px;line-height:1.5;}
+.platgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1px;background:var(--ln);}
+.plat{background:var(--card);padding:15px 17px;}
+.plat .pname{font-family:var(--dis);font-size:16.5px;font-weight:700;margin-bottom:3px;}
+.plat .pprice{font-family:var(--mono);font-size:9.5px;color:var(--verd);margin-bottom:5px;display:block;}
+.plat p{font-size:12px;line-height:1.55;color:rgba(24,26,30,0.78);}
+.plat .pbf{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:0.06em;color:var(--brass);margin-top:6px;display:block;}
+.tier-hdr{padding:38px 0 8px;}
+.tier-hdr h2{font-family:var(--dis);font-style:italic;font-size:clamp(20px,2.6vw,28px);font-weight:300;color:rgba(24,26,30,0.5);border-bottom:1px solid var(--lns);padding-bottom:9px;}
+section.city{padding:44px 0 12px;border-bottom:1px solid var(--ln);}
+section.city:last-of-type{border-bottom:none;}
+.chead{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;margin-bottom:3px;}
+.chead .left{flex:1 1 330px;}
+.ccode{font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;color:var(--brass);display:block;margin-bottom:4px;}
+h2.cn{font-family:var(--dis);font-size:clamp(22px,3vw,34px);font-weight:700;letter-spacing:-0.01em;}
+.hood{font-size:13px;font-style:italic;color:rgba(24,26,30,0.56);margin-top:2px;}
+.dnote{font-family:var(--mono);font-size:9px;color:rgba(24,26,30,0.48);margin-top:6px;border-left:2px solid var(--lns);padding-left:9px;max-width:400px;line-height:1.55;}
+.vcol{text-align:right;flex:0 0 auto;padding-top:3px;}
+.vcol .badge{font-size:9.5px;padding:4px 10px;}
+.vnote{display:block;font-family:var(--mono);font-size:9px;margin-top:4px;opacity:0.48;max-width:190px;line-height:1.4;}
+.wcbanner{background:var(--slate);color:var(--paper);padding:16px 20px;margin:12px 0 0;}
+.wcbanner .wclbl{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:0.12em;opacity:0.6;display:block;margin-bottom:5px;}
+.wcbanner p{font-size:13px;line-height:1.6;color:rgba(232,228,218,0.92);}
+.wcbanner strong{color:var(--paper);}
+.cbody{display:grid;grid-template-columns:1fr 350px;gap:26px;margin-top:16px;align-items:start;}
+@media(max-width:840px){.cbody{grid-template-columns:1fr;}}
+.rat{font-size:13.5px;line-height:1.68;color:rgba(24,26,30,0.85);margin-bottom:16px;}
+.listings{border:1px solid var(--lns);}
+.lst{background:var(--card);padding:13px 15px 15px;border-bottom:1px solid var(--ln);}
+.lst:last-child{border-bottom:none;}
+.lst .place{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:rgba(24,26,30,0.45);margin-bottom:2px;}
+.lst .price{font-family:var(--dis);font-size:18px;font-weight:700;}
+.lst .tags{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0;}
+.lst .tag{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:0.04em;border:1px solid var(--vdim);color:var(--verd);padding:2px 5px;}
+.lst .desc{font-size:12px;line-height:1.5;color:rgba(24,26,30,0.72);}
+.mapembed{width:100%;aspect-ratio:4/5;border:1px solid var(--lns);overflow:hidden;background:var(--card);}
+.mapembed iframe{width:100%;height:100%;border:0;}
+@media(max-width:840px){.mapembed{aspect-ratio:16/9;}}
+.mapcap{font-family:var(--mono);font-size:9px;opacity:0.48;margin-top:6px;padding-left:2px;line-height:1.5;}
+.cnote{margin-top:12px;font-size:12px;border-left:2px solid var(--lns);padding-left:11px;color:rgba(24,26,30,0.54);line-height:1.55;}
+footer{padding:42px 0 70px;}
+footer .rule{border-top:1px solid var(--lns);margin-bottom:20px;}
+footer p{font-size:12.5px;max-width:720px;color:rgba(24,26,30,0.52);margin-bottom:10px;line-height:1.6;}
+footer strong{color:rgba(24,26,30,0.72);}
+::selection{background:var(--blit);color:var(--ink);}
+</style>
+</head>
+<body>
+<header class="cover"><div class="wrap">
+  <div class="eyebrow"><span>EUROPEAN PIED-À-TERRE — MASTER PROSPECT FILE</span><span>25 CITIES · 3 TIERS</span><span>BUDGET $250–400K / UNIT · $50K FURNISH</span><span>COMPILED JUL 2026</span></div>
+  <h1 class="title">Twenty-five footholds:<br>a <em>working</em> European dossier</h1>
+  <p class="subtitle">Three tiers across 25 cities with OSM maps, sample listings, acquisition cost breakdown, US tax obligations, local portal directory, and remote STR management tools. All screened for walkable and leafy character, outdoor space, and rental viability.</p>
+  <div class="covgrid">
+    <div class="cgc"><span class="k">Unit minimum</span><span class="v">1BR, no studios</span></div>
+    <div class="cgc"><span class="k">Outdoor</span><span class="v">Balcony min.</span></div>
+    <div class="cgc"><span class="k">Condition</span><span class="v">Light reno OK</span></div>
+    <div class="cgc"><span class="k">Rental model</span><span class="v">Rent when vacant</span></div>
+    <div class="cgc"><span class="k">Schengen note</span><span class="v">90/180 cumulative</span></div>
+    <div class="cgc"><span class="k">Citizenship</span><span class="v">IT pending Naples</span></div>
+  </div>
+</div></header>
+<nav class="bar"><div class="wrap">
+  <span class="nlbl">Info</span>
+  <a href="#acq" class="il">Costs</a><a href="#tax" class="il">US Tax</a><a href="#portals" class="il">Portals</a><a href="#str" class="il">STR Tools</a>
+  <div class="ndiv"></div><span class="nlbl">Tier I</span>
+  <a href="#bologna">Bologna</a><a href="#lisbon">Lisbon</a><a href="#porto">Porto</a><a href="#athens">Athens</a><a href="#krakow">Kraków</a><a href="#prague">Prague</a><a href="#ljubljana">Ljubljana</a><a href="#vilnius">Vilnius</a><a href="#riga">Riga</a><a href="#helsinki">Helsinki</a>
+  <div class="ndiv"></div><span class="nlbl">Tier II</span>
+  <a href="#tbilisi">Tbilisi</a><a href="#tallinn">Tallinn</a><a href="#ghent">Ghent</a><a href="#thessaloniki">Thessaloniki</a><a href="#naples">Naples</a><a href="#lyon">Lyon</a><a href="#gdansk">Gdańsk</a><a href="#split">Split</a>
+  <div class="ndiv"></div><span class="nlbl">Tier III</span>
+  <a href="#brno">Brno</a><a href="#wroclaw">Wrocław</a><a href="#sofia">Sofia</a><a href="#malta">Malta</a><a href="#catania">Catania</a><a href="#plovdiv">Plovdiv</a><a href="#antwerp">Antwerp</a>
+</div></nav>
+<div class="wrap"><div class="legend-row">
+  <div class="item"><span class="badge open">Open</span> STR viable</div>
+  <div class="item"><span class="badge watch">Watch</span> zone/license caveat</div>
+  <div class="item"><span class="badge caution">Caution</span> real friction</div>
+  <div class="item"><span class="badge wc">Wildcard</span> non-Schengen</div>
+  <div class="item"><span class="badge t1">Tier I</span> primary shortlist</div>
+  <div class="item"><span class="badge t2">Tier II</span> secondary</div>
+  <div class="item"><span class="badge t3">Tier III</span> emerging / specialist</div>
+</div></div>
+<div style="padding:32px 0 0"><div class="wrap">
+
+<div class="is" id="acq">
+<div class="is-head"><h3>True Acquisition Cost — per €300,000 Purchase</h3><p>Headline price is not what you pay. Full entry costs on a €300k investment-property resale purchase. Transfer tax is the biggest variable. Confirm with a local notary before committing.</p></div>
+<div class="is-body" style="overflow-x:auto">
+<table class="acqtbl">
+<thead><tr><th>Country</th><th>Transfer / Stamp Tax</th><th>Notary + Legal</th><th>Agency</th><th>Approx. Total</th><th>Key Notes</th></tr></thead>
+<tbody>
+<tr><td>Georgia</td><td class="num">~0.1–0.2%</td><td class="num">~$500–1,000</td><td class="num">2–3%</td><td class="num tot lo">~3–4%</td><td class="nc">Non-Schengen. Registration ~$20. Buyer pays agent.</td></tr>
+<tr><td>Estonia</td><td class="num">0%</td><td class="num">~1–1.5%</td><td class="num">2–4%</td><td class="num tot lo">~2–4%</td><td class="nc">No transfer tax. Remote e-notary closing possible.</td></tr>
+<tr><td>Lithuania</td><td class="num">0.5%</td><td class="num">~1%</td><td class="num">1.5–2.5%</td><td class="num tot lo">~3–4%</td><td class="nc">Lowest EU closing costs on this list.</td></tr>
+<tr><td>Czech Republic</td><td class="num">0% (abolished 2020)</td><td class="num">~1%</td><td class="num">3–5%</td><td class="num tot lo">~4–5%</td><td class="nc">Agency fee negotiable; Bezrealitky.cz bypasses it entirely.</td></tr>
+<tr><td>Poland</td><td class="num">2% PCC</td><td class="num">~1%</td><td class="num">2–3%</td><td class="num tot lo">~5–6%</td><td class="nc">New builds: 0% PCC but 8% VAT instead. PCC paid at notary.</td></tr>
+<tr><td>Slovenia</td><td class="num">2%</td><td class="num">~1%</td><td class="num">2–3%</td><td class="num tot lo">~5–6%</td><td class="nc">Confirm US reciprocity status with notary before signing.</td></tr>
+<tr><td>Latvia</td><td class="num">2% land registry</td><td class="num">~1%</td><td class="num">2–3%</td><td class="num tot lo">~5–6%</td><td class="nc">Straightforward EU process; English-language support available.</td></tr>
+<tr><td>Bulgaria</td><td class="num">3% municipal</td><td class="num">~1%</td><td class="num">2–3%</td><td class="num tot mid">~6–7%</td><td class="nc">Apartments: buy directly. Houses with land: Bulgarian company required. Euro adopted Jan 2026.</td></tr>
+<tr><td>Croatia</td><td class="num">3%</td><td class="num">~1%</td><td class="num">2–3%</td><td class="num tot mid">~6–7%</td><td class="nc">Ministry of Justice approval for non-EU adds ~€500 and 1–6 months.</td></tr>
+<tr><td>Greece</td><td class="num">3.09%</td><td class="num">~1–1.5%</td><td class="num">2–3%</td><td class="num tot mid">~6–8%</td><td class="nc">Capital gains tax suspended through Dec 2026 — verify before any planned exit.</td></tr>
+<tr><td>Malta</td><td class="num">5% stamp duty</td><td class="num">~1%</td><td class="num">0% (seller pays)</td><td class="num tot mid">~6–7%</td><td class="nc">No buyer agency fee. AIP permit for non-EU outside SDAs (€175k floor, 6–10 weeks).</td></tr>
+<tr><td>Finland</td><td class="num">2%</td><td class="num">~1%</td><td class="num">3–4% (seller)</td><td class="num tot mid">~6–7%</td><td class="nc">Agency typically paid by seller. Clean process.</td></tr>
+<tr><td>Italy</td><td class="num">9% (seconda casa / investment)</td><td class="num">~1.5–2%</td><td class="num">3–4% + 22% VAT</td><td class="num tot hi">~13–16%</td><td class="nc">2% only for prima casa (Italian residents, primary residence). New builds: 10% VAT.</td></tr>
+<tr><td>Portugal</td><td class="num">~6% IMT + 0.8% stamp</td><td class="num">~1%</td><td class="num">5% + 23% VAT</td><td class="num tot hi">~11–14%</td><td class="nc">IMT rate on €300k secondary home. Progressive table; confirm with solicitor.</td></tr>
+<tr><td>France</td><td class="num">7.5% droits de mutation</td><td class="num">~1.5%</td><td class="num">3–5%</td><td class="num tot hi">~9–12%</td><td class="nc">Non-resident CGT at exit: 36.2% vs 17.2% for French residents. Surcharge proposals pending.</td></tr>
+<tr><td>Belgium (Flanders)</td><td class="num">12.5% registration</td><td class="num">~2%</td><td class="num">3%</td><td class="num tot hi">~14–17%</td><td class="nc">Highest on this list. New builds: 21% VAT (worse). Amortises over a 10+ year hold.</td></tr>
+</tbody></table>
+<p style="font-size:11.5px;color:rgba(24,26,30,0.48);margin-top:10px;">Italy's 9% seconda casa rate is the single most important non-obvious fact in this file. The prima casa exemption (2%) requires Italian residency and is for primary-residence purchases — not available to a US buyer without Italian residence at time of purchase, even with citizenship pending. Bologna and Naples listings look better value on headline price than they actually are once this is factored in.</p>
+</div></div>
+
+<div class="is" id="tax">
+<div class="is-head"><h3>US Tax Obligations for Foreign Rental Property</h3><p>As a US citizen you owe the IRS on all foreign rental income regardless of local taxes paid. Framework only — not a substitute for a CPA with international real estate experience.</p></div>
+<div class="is-body"><div class="taxgrid">
+<div class="ti"><span class="tilbl">01</span><h4>Report All Rental Income</h4><p>Foreign rental income goes on Schedule E (Form 1040) like domestic property. No threshold, no exclusion. Convert at average annual exchange rate for the year.</p></div>
+<div class="ti"><span class="tilbl">02</span><h4>Foreign Tax Credit — Form 1116</h4><p>Taxes paid abroad on rental income can offset US liability on the same income, generally preventing double taxation. File Form 1116 annually — requires tracking taxes paid per country and income category.</p></div>
+<div class="ti"><span class="tilbl">03</span><h4>FBAR — FinCEN 114</h4><p>Foreign bank accounts exceeding $10,000 aggregate at any point during the year require FinCEN 114 by April 15 (auto-extended Oct 15). Willful non-filing: up to $100,000 or 50% of account balance per violation.</p></div>
+<div class="ti"><span class="tilbl">04</span><h4>FATCA — Form 8938</h4><p>Report foreign financial assets over $50,000 (or $75,000 at any point) if living in the US. Penalty for non-filing: $10,000. Includes foreign bank accounts used for rent collection.</p></div>
+<div class="ti"><span class="tilbl">05</span><h4>Depreciation: 40 Years, Not 27.5</h4><p>Foreign rental property must be depreciated over 40 years straight-line (vs 27.5 years for US residential). Mandatory — cannot be accelerated. Building value only; land is non-depreciable.</p></div>
+<div class="ti"><span class="tilbl">06</span><h4>Passive Activity Loss Rules</h4><p>Rental losses are generally "passive" and can only offset passive income unless you qualify as a real estate professional or are an active participant with AGI under $100k–$150k. Unused losses carry forward.</p></div>
+<div class="ti"><span class="tilbl">07</span><h4>Currency Gain / Loss at Sale</h4><p>Gains are calculated in USD. Currency movements between purchase date and sale date create a separate "Section 988 transaction" gain — taxable even if the property was flat in local currency terms.</p></div>
+<div class="ti"><span class="tilbl">08</span><h4>Estate Tax: Worldwide Assets</h4><p>US citizens face estate tax on worldwide assets including foreign property. Exemption is $13.99M in 2026 but subject to legislative change. Consult an estate attorney before acquiring multiple properties internationally.</p></div>
+</div>
+<p style="font-size:11.5px;color:rgba(24,26,30,0.48);margin-top:14px;">Key CPA questions: Form 8858 (foreign disregarded entity), GILTI if using foreign companies, state tax treatment (California taxes worldwide income). Engage international expertise before your first purchase.</p>
+</div></div>
+
+<div class="is" id="portals">
+<div class="is-head"><h3>Local Real Estate Portal Directory</h3><p>Where to actually search in each market. Most portals require the local language — browser translation works on most. Private-seller portals (no agency fee) are flagged.</p></div>
+<div class="is-body"><div class="pgrid">
+<div class="pc"><span class="cn">Italy</span><a href="https://www.immobiliare.it" target="_blank">Immobiliare.it</a><a href="https://www.casa.it" target="_blank">Casa.it</a><a href="https://www.idealista.it" target="_blank">Idealista.it</a><p class="pn">Private sellers: Bakeca.it. Agency listings dominate; expect 3–4% + 22% VAT agent fee.</p></div>
+<div class="pc"><span class="cn">Portugal</span><a href="https://www.idealista.pt" target="_blank">Idealista.pt</a><a href="https://www.imovirtual.com" target="_blank">Imovirtual.com</a><a href="https://www.era.pt" target="_blank">ERA.pt</a><p class="pn">English listings common in expat areas. Agent fee typically paid by seller.</p></div>
+<div class="pc"><span class="cn">Poland</span><a href="https://www.otodom.pl" target="_blank">Otodom.pl</a><a href="https://www.gratka.pl" target="_blank">Gratka.pl</a><a href="https://trojmiasto.pl" target="_blank">Trojmiasto.pl (Gdańsk)</a><p class="pn">OLX.pl for private sellers. Most listings in Polish only.</p></div>
+<div class="pc"><span class="cn">Czech Republic</span><a href="https://www.sreality.cz" target="_blank">Sreality.cz</a><a href="https://www.bezrealitky.cz" target="_blank">Bezrealitky.cz ★ no fee</a><p class="pn">Bezrealitky = "without agents" — direct owner listings, zero commission.</p></div>
+<div class="pc"><span class="cn">Slovenia</span><a href="https://www.nepremicnine.net" target="_blank">Nepremicnine.net</a><a href="https://www.bolha.com" target="_blank">Bolha.com</a><p class="pn">Nepremicnine is dominant. Slovenian only; use browser translation.</p></div>
+<div class="pc"><span class="cn">Lithuania</span><a href="https://www.aruodas.lt" target="_blank">Aruodas.lt</a><a href="https://www.domoplius.lt" target="_blank">Domoplius.lt</a><p class="pn">Aruodas dominant; basic English filter available.</p></div>
+<div class="pc"><span class="cn">Latvia</span><a href="https://www.city24.lv" target="_blank">City24.lv</a><a href="https://www.ss.lv" target="_blank">SS.lv</a><p class="pn">SS.lv = dominant classifieds; mix of private and agency listings.</p></div>
+<div class="pc"><span class="cn">Finland</span><a href="https://www.etuovi.com" target="_blank">Etuovi.com</a><a href="https://www.oikotie.fi" target="_blank">Oikotie.fi</a><p class="pn">Finnish only; auto-translation works well. High-quality photo standards.</p></div>
+<div class="pc"><span class="cn">Georgia</span><a href="https://www.myhome.ge" target="_blank">Myhome.ge</a><a href="https://korter.ge/en" target="_blank">Korter.ge (English)</a><p class="pn">Myhome.ge dominant. Korter.ge focuses on new builds with English UI.</p></div>
+<div class="pc"><span class="cn">Estonia</span><a href="https://www.kv.ee" target="_blank">KV.ee</a><a href="https://www.city24.ee" target="_blank">City24.ee</a><p class="pn">Both have English interfaces. KV.ee largest. Remote e-notary closing possible.</p></div>
+<div class="pc"><span class="cn">Belgium</span><a href="https://www.immoweb.be" target="_blank">Immoweb.be</a><a href="https://www.zimmo.be" target="_blank">Zimmo.be</a><p class="pn">Immoweb dominant. Listings in Dutch/French/German — translation required.</p></div>
+<div class="pc"><span class="cn">Greece</span><a href="https://www.spitogatos.gr" target="_blank">Spitogatos.gr</a><a href="https://www.xe.gr" target="_blank">Xe.gr</a><p class="pn">Spitogatos is the largest dedicated portal. Both have an English option.</p></div>
+<div class="pc"><span class="cn">Bulgaria</span><a href="https://www.imot.bg" target="_blank">Imot.bg</a><a href="https://www.property.bg" target="_blank">Property.bg (EN)</a><a href="https://www.bulgarianproperties.com" target="_blank">BulgarianProperties.com</a><p class="pn">Property.bg and BulgarianProperties.com have full English interfaces.</p></div>
+<div class="pc"><span class="cn">Malta</span><a href="https://www.maltapark.com" target="_blank">Maltapark.com</a><a href="https://www.dhalia.com" target="_blank">Dhalia.com</a><a href="https://www.franksalt.com.mt" target="_blank">Frank Salt Real Estate</a><p class="pn">All English. No buyer agency fee — sellers pay. Best inventory on Dhalia and Frank Salt.</p></div>
+<div class="pc"><span class="cn">Croatia</span><a href="https://www.njuskalo.hr" target="_blank">Njuskalo.hr</a><a href="https://www.oglasi.hr" target="_blank">Oglasi.hr</a><p class="pn">Croatian only — translation required. Ministry approval is a separate step from the portal search.</p></div>
+<div class="pc"><span class="cn">France</span><a href="https://www.seloger.com" target="_blank">SeLoger.com</a><a href="https://www.leboncoin.fr/c/ventes_immobilieres" target="_blank">Le Bon Coin (immobilier)</a><p class="pn">SeLoger dominant. Le Bon Coin good for private sellers. French only.</p></div>
+</div></div></div>
+
+<div class="is" id="str">
+<div class="is-head"><h3>Remote STR Management Platforms</h3><p>Managing furnished rentals across multiple countries requires multi-channel distribution, automated guest messaging, and multi-currency accounting. The platform manages distribution — you still need a local co-host or cleaning partner in each city.</p></div>
+<div class="is-body"><div class="platgrid">
+<div class="plat"><div class="pname">Guesty</div><span class="pprice">~$35–50/property/month</span><p>Enterprise-grade, best-in-class for 10+ properties across multiple countries. Handles multi-currency, automated messaging, owner statements, PMS-level reporting. Integrates every major OTA plus direct booking. The industry standard for a portfolio at this ambition.</p><span class="pbf">Best for: 5+ properties, complex multi-country portfolios</span></div>
+<div class="plat"><div class="pname">Hostaway</div><span class="pprice">Custom — competitive to Guesty</span><p>Strong all-rounder for 5–50 properties. Good European channel coverage: Holidu, Booking.com, Airbnb, Expedia. Increasingly competitive reviews from multi-country hosts. Better priced than Guesty for mid-size portfolios.</p><span class="pbf">Best for: Growing 3–15 property portfolio</span></div>
+<div class="plat"><div class="pname">Lodgify</div><span class="pprice">From ~€12/month + optional % rev</span><p>Best direct-booking website builder in the category — important for driving traffic off Airbnb and avoiding OTA fees. Well-suited to 2–5 properties. European user base strong; Barcelona-based support team.</p><span class="pbf">Best for: Starting out, 2–5 properties</span></div>
+<div class="plat"><div class="pname">Smoobu</div><span class="pprice">€19–59/month</span><p>German-founded, strong specifically in continental European markets. Good Airbnb, Booking.com, and HomeAway integration. Cleaner UI than Beds24. Stronger in DACH region than Southern/Eastern Europe.</p><span class="pbf">Best for: European-focused, simpler portfolios</span></div>
+<div class="plat"><div class="pname">Beds24</div><span class="pprice">From £4/room/month</span><p>Lowest-cost option with genuinely powerful configuration if you're willing to build it out. Steep learning curve — for technically confident users who want custom automation. Very flexible multi-property calendar and channel management.</p><span class="pbf">Best for: Technical hosts, cost-sensitive portfolios</span></div>
+</div>
+<p style="font-size:11.5px;color:rgba(24,26,30,0.48);margin-top:14px;">Budget ~20–25% of gross STR revenue per property for combined management (remote platform + local co-host + cleaning). The platform handles distribution and communication — physical operations require a trusted local contact in each city.</p>
+</div></div>
+
+</div></div>
+<div class="wrap"><div class="tier-hdr"><h2>Tier I — Primary Shortlist <span style="font-size:0.6em;font-style:normal;opacity:0.7;">(10 cities)</span></h2></div></div>
+<section class="city" id="bologna"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">IT · BOLOGNA</span><h2 class="cn">Bologna</h2><div class="hood">Saragozza · Murri · San Donato · Giardini Margherita fringe</div></div>
+  <div class="vcol"><span class="badge t1">Tier I</span> <span class="badge open">Open</span><span class="vnote">National CIN registration; no city-level STR ban</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Italy's national CIN short-term rental registration is bureaucratic but workable everywhere in Bologna — no city ban. The city is compact, porticoed (UNESCO-listed, weather-proof walking year-round), a major HSR hub (35 min to Florence, 60 min to Milan), with a large student and medical-professional population supporting both tourist STR demand and a medium-term rental fallback. Critical note: Italian transfer tax for investment properties (seconda casa) is 9% — substantially higher than commonly assumed. See acquisition cost table.</p>
+    <div class="listings"><div class="lst"><span class="place">Via Murri</span><span class="price">€350,000</span><div class="tags"><span class="tag">110 m²</span><span class="tag">2BR</span><span class="tag">Balcony</span><span class="tag">Tenanted ~3.4% yield</span></div><p class="desc">Currently let through 2030 — income from day one if you don't need to occupy immediately.</p></div><div class="lst"><span class="place">Saragozza (comparable)</span><span class="price">€280,000–320,000</span><div class="tags"><span class="tag">~90 m²</span><span class="tag">3rd floor</span><span class="tag">Elevator</span><span class="tag">Tram access</span></div><p class="desc">Quiet residential setting; 1BR convertible to 2; tram to center 8 min.</p></div><div class="lst"><span class="place">Via Castiglione / Giardini Margherita</span><span class="price">€380,000+</span><div class="tags"><span class="tag">Period building</span><span class="tag">Balcony</span><span class="tag">Renovated</span></div><p class="desc">Most leafy and elite pocket of central Bologna; expect smaller units at the budget ceiling.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=11.327,44.477,11.353,44.503&layer=mapnik&marker=44.49,11.34" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Saragozza / Murri / Giardini Margherita, Bologna</p></div>
+  </div>
+</div></section>
+<section class="city" id="lisbon"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">PT · LISBON</span><h2 class="cn">Lisbon</h2><div class="hood">Campo de Ourique · Avenidas Novas</div></div>
+  <div class="vcol"><span class="badge t1">Tier I</span> <span class="badge watch">Watch</span><span class="vnote">AL revised Apr 2026; both neighborhoods currently outside freeze zones</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Lisbon's Alojamento Local rules have reversed three times since 2024. The April 2026 revision shrank the frozen zones; neither Campo de Ourique nor Avenidas Novas sits inside the remaining containment parishes (Santa Maria Maior, Misericórdia, Santo António). Campo de Ourique is the village-like neighborhood Lisbon's upper-middle class actually lives in; Avenidas Novas is grander and metro-rich. Portugal's IMT transfer tax runs ~6% for a €300k secondary home — see acquisition cost table.</p>
+    <div class="listings"><div class="lst"><span class="place">Campo de Ourique, T1</span><span class="price">€280,000–330,000</span><div class="tags"><span class="tag">45–55 m²</span><span class="tag">T1</span><span class="tag">Balcony</span><span class="tag">Renovated</span></div><p class="desc">Near the municipal pool and neighborhood market; best value in the area.</p></div><div class="lst"><span class="place">Avenidas Novas, new build T1</span><span class="price">€350,000–420,000</span><div class="tags"><span class="tag">52–57 m²</span><span class="tag">Terrace 7–69 m²</span><span class="tag">Move-in ready</span></div><p class="desc">Terrace size varies dramatically by unit — inspect carefully.</p></div><div class="lst"><span class="place">Amoreiras duplex</span><span class="price">At / over ceiling</span><div class="tags"><span class="tag">T1 duplex</span><span class="tag">30 m² garden</span><span class="tag">Elevator</span></div><p class="desc">Private garden rather than balcony — outdoor space well beyond the brief minimum.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-9.175,38.704,-9.149,38.73&layer=mapnik&marker=38.717,-9.162" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Campo de Ourique, Lisbon — outside the AL containment zones</p></div>
+  </div>
+</div></section>
+<section class="city" id="porto"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">PT · PORTO</span><h2 class="cn">Porto</h2><div class="hood">Cedofeita · Lapa-Bouça · Foz do Douro</div></div>
+  <div class="vcol"><span class="badge t1">Tier I</span> <span class="badge open">Open</span><span class="vnote">Same national AL framework as Lisbon; calmer local politics</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Porto operates under the same AL licensing framework as Lisbon without the city-level containment volatility. Cedofeita and the adjoining Lapa-Bouça pocket are dense, historic, and walkable; Foz do Douro, where the Douro meets the Atlantic, is Porto's most elite and genuinely leafy residential address — commanding a real premium but offering a caliber of neighborhood above anything else in either Portuguese city on this list.</p>
+    <div class="listings"><div class="lst"><span class="place">Cedofeita</span><span class="price">€260,000–310,000</span><div class="tags"><span class="tag">T1</span><span class="tag">74 m²</span><span class="tag">Renovated</span><span class="tag">Steps from São Bento</span></div><p class="desc">Traditional building with elevator; central but residential feel.</p></div><div class="lst"><span class="place">Lapa-Bouça</span><span class="price">€285,000</span><div class="tags"><span class="tag">T2 duplex</span><span class="tag">Natural light</span><span class="tag">Investment unit</span></div><p class="desc">Ground floor + basement with natural light; marketed explicitly as an investment unit.</p></div><div class="lst"><span class="place">Foz do Douro / Pinhais da Foz</span><span class="price">€350,000+</span><div class="tags"><span class="tag">T1</span><span class="tag">Terrace</span><span class="tag">Sea view</span><span class="tag">Gated</span></div><p class="desc">Porto's most prestigious residential address; gated condominium setting.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-8.634,41.139,-8.608,41.165&layer=mapnik&marker=41.152,-8.621" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Cedofeita, Porto — historic, walkable, between downtown and Boavista</p></div>
+  </div>
+</div></section>
+<section class="city" id="athens"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">GR · ATHENS</span><h2 class="cn">Athens</h2><div class="hood">Chalandri (not Pangrati — see note)</div></div>
+  <div class="vcol"><span class="badge t1">Tier I</span> <span class="badge watch">Watch</span><span class="vnote">Central districts frozen for new STR through 2026; Chalandri is outside the freeze</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Pangrati is the neighborhood every 'charming central Athens' list points to (€200k–€275k renovated 1–2BR with balcony), but it sits inside the 2nd Municipal District frozen for new STR registrations through 2026. Chalandri, a northern suburb on metro Line 3, sits outside the freeze, has its own walkable village center, and is widely considered one of Athens's most livable districts. Greek capital gains tax on property sales is suspended through December 2026 — confirm status before any planned exit. Transfer tax: 3.09%.</p>
+    <div class="listings"><div class="lst"><span class="place">Chalandri, Ethnos</span><span class="price">€340,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">85.5 m²</span><span class="tag">1st floor</span></div><p class="desc">Standard floor plan, good metro access, well within budget.</p></div><div class="lst"><span class="place">Chalandri, Toufa</span><span class="price">€382,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">85 m²</span><span class="tag">Park view</span><span class="tag">Furnished</span></div><p class="desc">Heat pump, park view, move-in ready — the clearest turnkey option.</p></div><div class="lst"><span class="place">Chalandri, new build</span><span class="price">Price on request</span><div class="tags"><span class="tag">94 m²</span><span class="tag">30 m² balconies</span><span class="tag">A+ energy</span><span class="tag">Parking</span></div><p class="desc">Front-facing, dual-aspect; worth a direct inquiry to the developer.</p></div></div>
+    <p class="cnote">Pangrati: good for long-term lease or personal use only while the freeze holds — check current zone status before acting.</p>
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=23.784,38.01,23.81,38.036&layer=mapnik&marker=38.023,23.797" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Chalandri, Athens — outside 2026 STR freeze; metro Line 3</p></div>
+  </div>
+</div></section>
+<section class="city" id="krakow"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">PL · KRAKÓW</span><h2 class="cn">Kraków</h2><div class="hood">Kazimierz</div></div>
+  <div class="vcol"><span class="badge t1">Tier I</span> <span class="badge open">Open</span><span class="vnote">Apartment purchase exempt from non-EU permit requirement; no STR ban</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Poland's non-EU buyer permit applies to land parcels, not standard apartment purchases. Kazimierz, the old Jewish quarter turned arts district, is dense, walkable, tram-connected, and has Kraków's strongest café-and-gallery culture. Prices remain well below Western European comparables. Transfer tax: 2% PCC on resale; new builds exempt from PCC but 8% VAT applies instead.</p>
+    <div class="listings"><div class="lst"><span class="place">Ul. Skawińska / Kazimierz core</span><span class="price">~€220,000–250,000</span><div class="tags"><span class="tag">2-room</span><span class="tag">48–49 m²</span><span class="tag">1889 kamienica</span><span class="tag">Renovated</span></div><p class="desc">Restored 19th-century tenement near Plac Nowy — the heart of Kazimierz.</p></div><div class="lst"><span class="place">Ul. Miodowa</span><span class="price">Premium tier</span><div class="tags"><span class="tag">2-room</span><span class="tag">65 m²</span><span class="tag">2nd floor</span><span class="tag">Restored tenement</span></div><p class="desc">Larger restored apartment in renovated tenement, Kazimierz center.</p></div><div class="lst"><span class="place">Ul. Skałeczna (fixer)</span><span class="price">~€140,000–180,000</span><div class="tags"><span class="tag">2-room + balcony</span><span class="tag">35–45 m²</span><span class="tag">10 min to Wawel</span></div><p class="desc">Leaves the largest furnishing and renovation budget margin of any Tier I city.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=19.931,50.039,19.957,50.065&layer=mapnik&marker=50.052,19.944" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Kazimierz, Kraków — old Jewish quarter turned arts and café district</p></div>
+  </div>
+</div></section>
+<section class="city" id="prague"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">CZ · PRAGUE</span><h2 class="cn">Prague</h2><div class="hood">Vinohrady (Praha 2)</div></div>
+  <div class="vcol"><span class="badge t1">Tier I</span> <span class="badge open">Open</span><span class="vnote">No nationality restriction on apartments; Czech transfer tax abolished 2020</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">No nationality quota on Czech apartment purchases — friction is administrative not legal. Vinohrady is Prague's grandest residential district: tree-lined avenues, Art Nouveau buildings, two large parks (Riegrovy sady, Havlíčkovy sady), excellent metro and tram coverage without Old Town density. Czech transfer tax abolished in 2020. Bezrealitky.cz lists private sellers with no agency fee — a meaningful saving. Balconies are only 9% of Praha 2 inventory: confirm outdoor space before shortlisting any unit.</p>
+    <div class="listings"><div class="lst"><span class="place">Vinohrady, 1–2BR (market calibration)</span><span class="price">~€280,000–380,000</span><div class="tags"><span class="tag">45–55 m²</span><span class="tag">~€7,000–7,500/m²</span></div><p class="desc">Based on district average pricing; verify live inventory on Sreality.cz and Bezrealitky.cz.</p></div></div>
+    <p class="cnote">Thinnest listing data of the Tier I cities — portal scraping was limited. Recommend a dedicated Sreality.cz and Bezrealitky.cz search before shortlisting Prague.</p>
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=14.427,50.061,14.453,50.087&layer=mapnik&marker=50.074,14.44" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Vinohrady, Prague — Art Nouveau district; parks at Riegrovy and Havlíčkovy sady</p></div>
+  </div>
+</div></section>
+<section class="city" id="ljubljana"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">SI · LJUBLJANA</span><h2 class="cn">Ljubljana</h2><div class="hood">Center / Tabor · Bežigrad</div></div>
+  <div class="vcol"><span class="badge t1">Tier I</span> <span class="badge watch">Watch</span><span class="vnote">US generally qualifies under Slovenia's reciprocity list — confirm with notary</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Best value-for-budget on Tier I: Ljubljana's center prices 1–2BR apartments at €150,000–€220,000, leaving substantial headroom for furnishing or upgrade. A walkable, low-rise, river-and-park capital with none of Prague's or Kraków's tourist density. Slovenia uses a reciprocity-list approach for non-EU buyers rather than a blanket restriction — confirm with your notary before exchanging contracts. Transfer tax: 2%.</p>
+    <div class="listings"><div class="lst"><span class="place">Center / Tabor</span><span class="price">€215,000</span><div class="tags"><span class="tag">2-room</span><span class="tag">53 m²</span><span class="tag">1900, renovated 2019</span></div><p class="desc">Period building in old town fringe, fully adapted.</p></div><div class="lst"><span class="place">Center (high ground floor)</span><span class="price">€169,000</span><div class="tags"><span class="tag">2-room</span><span class="tag">52.8 m²</span><span class="tag">1855, renovated 2017</span></div><p class="desc">Below half the budget ceiling — exceptional headroom for furnishing or upgrading.</p></div><div class="lst"><span class="place">Bežigrad</span><span class="price">€175,000</span><div class="tags"><span class="tag">3-room</span><span class="tag">67.8 m²</span><span class="tag">Fully renovated</span></div><p class="desc">Quiet residential pocket; custom furniture included; well below budget for the size.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=14.495,46.038,14.521,46.064&layer=mapnik&marker=46.051,14.508" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Center / Tabor, Ljubljana — compact capital; river and park access</p></div>
+  </div>
+</div></section>
+<section class="city" id="vilnius"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">LT · VILNIUS</span><h2 class="cn">Vilnius</h2><div class="hood">Žvėrynas</div></div>
+  <div class="vcol"><span class="badge t1">Tier I</span> <span class="badge open">Open</span><span class="vnote">Confirm non-EU notary process locally — no flag found in research</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Žvėrynas is Vilnius's most prestigious quiet district: distinctive wooden and Art Nouveau architecture, heavy tree cover, and a short walk or bus across the Neris river to the Old Town. New-build inventory here comes with private balconies as standard. Pricing is the second-best value on Tier I after Ljubljana. Transfer tax: 0.5%.</p>
+    <div class="listings"><div class="lst"><span class="place">Žvėrynas, Liepyno g. (new project)</span><span class="price">€225,000</span><div class="tags"><span class="tag">2-room</span><span class="tag">52 m²</span><span class="tag">4th floor</span><span class="tag">Balcony</span><span class="tag">A++ energy</span></div><p class="desc">Low-rise development with spacious balconies as a design feature.</p></div><div class="lst"><span class="place">Žvėrynas, Ukmergės g.</span><span class="price">€219,000–247,000</span><div class="tags"><span class="tag">3-room</span><span class="tag">49–58 m²</span><span class="tag">Multiple floors available</span></div><p class="desc">Several comparable units in the same building — pick floor and aspect.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=25.244,54.682,25.27,54.708&layer=mapnik&marker=54.695,25.257" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Žvėrynas, Vilnius — quiet, green, short walk to the Old Town across the Neris</p></div>
+  </div>
+</div></section>
+<section class="city" id="riga"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">LV · RIGA</span><h2 class="cn">Riga</h2><div class="hood">Centrs — Alberta iela / Elizabetes iela (Art Nouveau Quarter)</div></div>
+  <div class="vcol"><span class="badge t1">Tier I</span> <span class="badge watch">Watch</span><span class="vnote">Qualitative read — verify live listings on SS.lv and City24.lv before acting</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Riga's Art Nouveau quarter is the most architecturally distinctive neighborhood on the full list — the highest concentration of Jugendstil buildings in Europe, UNESCO-recognized, tree-lined boulevards, five minutes from Vērmanes Garden. Market pricing for renovated units in restored period buildings: ~€150,000–€250,000 based on general market estimates. Live listing data was limited this research round. Transfer tax: 2% land registry.</p>
+    <div class="listings"><div class="lst"><span class="place">Centrs, Art Nouveau quarter (market estimate)</span><span class="price">~€150,000–250,000</span><div class="tags"><span class="tag">2-room</span><span class="tag">Restored Jugendstil</span><span class="tag">Estimated</span></div><p class="desc">Verify directly on SS.lv or City24.lv — this entry runs on background market knowledge, not pulled listings.</p></div></div>
+    <p class="cnote">Honest flag: needs one more dedicated search pass on SS.lv before shortlisting.</p>
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=24.107,56.947,24.133,56.973&layer=mapnik&marker=56.96,24.12" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Art Nouveau Quarter, Riga — highest concentration of Jugendstil in Europe</p></div>
+  </div>
+</div></section>
+<section class="city" id="helsinki"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">FI · HELSINKI</span><h2 class="cn">Helsinki</h2><div class="hood">Töölö (aspirational) · Kallio (budget-realistic)</div></div>
+  <div class="vcol"><span class="badge t1">Tier I</span> <span class="badge caution">Caution</span><span class="vnote">Töölö runs 20%+ over budget ceiling; Kallio is the realistic alternative</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Finland eased non-EU buyer restrictions outside certain border zones — legal process is clean. The obstacle is price: Töölö, the leafy park-and-sea district that best matches the brief, runs well past €400k for anything reasonable. The cheapest comp found was a 60 m² 2BR from 1928 at €495,000 — 24% over the ceiling. Kallio, more bohemian and notably cheaper, is the realistic alternative: still tram- and metro-connected, increasingly leafy near Linnanmäki and Mustikkamaa. No Kallio-specific listings were pulled this round. Transfer tax: 2%.</p>
+    <div class="listings"><div class="lst"><span class="place">Etu-Töölö (budget comp only)</span><span class="price">€495,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">60 m²</span><span class="tag">1928 building</span></div><p class="desc">Cheapest reasonable Töölö comp found — confirms the district floor, not a fit at this budget.</p></div></div>
+    <p class="cnote">For Kallio: search Etuovi.com with area filter 'Kallio,' price ≤€350,000. Helsinki may be more realistic post-citizenship if the budget expands.</p>
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=24.91,60.161,24.936,60.187&layer=mapnik&marker=60.174,24.923" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Töölö, Helsinki — budget-aspirational; Kallio is the realistic alternative</p></div>
+  </div>
+</div></section>
+<div class="wrap"><div class="tier-hdr"><h2>Tier II — Secondary Candidates <span style="font-size:0.6em;font-style:normal;opacity:0.7;">(8 cities)</span></h2></div></div>
+<section class="city" id="tbilisi"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">GE · TBILISI</span><h2 class="cn">Tbilisi</h2><div class="hood">Vera · Vake</div><p class='dnote'>Tier II because Georgia is non-EU. Strategically may be the most important entry across all 25 cities for someone under the 90/180 constraint.</p></div>
+  <div class="vcol"><span class="badge t2">Tier II</span> <span class="badge wc">Wc</span><span class="vnote">Non-Schengen; doesn't cost a single day of your 90/180 window</span></div></div>
+  <div class="wcbanner"><span class="wclbl">The Schengen pressure valve</span><p>Every Schengen property competes for the same 90 days. Tbilisi costs you <strong>nothing</strong> against that clock — US citizens get up to one year visa-free. Base yourself here for months while your Schengen properties earn. At <strong>$100k–$200k for a quality Vera or Vake apartment</strong>, it also frees capital for better units elsewhere. Rental income: flat 5%. Zero capital gains after two years. Yields 7–10% achievable on smaller Vera units.</p></div>
+  <div class="cbody" margin-top:14px><div>
+    <p class="rat">Vera and Vake are Tbilisi's most established upscale and expat-heavy neighborhoods. Foreigners buy with the same rights as Georgian citizens, legal fees rarely exceed $1,000, and property registration costs ~$20. New-build average: $1,312/m². Record 40,350 transactions in 2024. Political caveat: the 2024 protests over the Georgian Dream government's pro-Russia pivot and ongoing EU accession uncertainty are real factors — not dealbreakers at this price point, but they change the holding-risk calculus vs. an EU purchase.</p>
+    <div class="listings"><div class="lst"><span class="place">Vera, quality new build</span><span class="price">~$120,000–160,000</span><div class="tags"><span class="tag">~80 m²</span><span class="tag">2BR</span><span class="tag">Green frame finish</span><span class="tag">Balcony</span></div><p class="desc">At $2,000/m² for a quality new build in Vera — move-in ready.</p></div><div class="lst"><span class="place">Vake, luxury apartment</span><span class="price">~$160,000–200,000</span><div class="tags"><span class="tag">80 m²</span><span class="tag">2BR</span><span class="tag">24hr security</span></div><p class="desc">Most prestigious address; expat tenant at ~$1,000/mo = 7.5% gross yield.</p></div><div class="lst"><span class="place">Ortachala (Old Town-adjacent)</span><span class="price">~$100,000–140,000</span><div class="tags"><span class="tag">60–70 m²</span><span class="tag">Riverside</span><span class="tag">Rising profile</span></div><p class="desc">Greenest central district; developer projects coming; lowest entry price.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=44.775,41.696,44.801,41.722&layer=mapnik&marker=41.7088,44.788" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Vera, Tbilisi, Georgia — non-Schengen; up to 1 year visa-free for US citizens</p></div>
+  </div>
+</div></section>
+<section class="city" id="tallinn"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">EE · TALLINN</span><h2 class="cn">Tallinn</h2><div class="hood">Kalamaja</div><p class='dnote'>Tier II: Vilnius and Riga already fill the Baltic slot in Tier I. Kalamaja is the strongest lifestyle pick of the three Baltic neighborhoods.</p></div>
+  <div class="vcol"><span class="badge t2">Tier II</span> <span class="badge open">Open</span><span class="vnote">No apartment quota for foreigners; e-notary remote closing possible</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Kalamaja is Tallinn's Ruzafa: a wooden-house creative district anchored by Telliskivi Creative City, with a Pelguranna tram upgrade (design phase, completion ~2029) likely to push values 5–15%. Renovated apartments run €220k–€350k. Estonia imposes no foreign quota on apartments, closing costs are the EU's lowest (0.8–1.8%), and the e-notary system means you can close without traveling to Tallinn. Asking prices run 14–20% above actual transaction prices — meaningful negotiating room.</p>
+    <div class="listings"><div class="lst"><span class="place">Kalamaja, renovated wooden house</span><span class="price">€220,000–280,000</span><div class="tags"><span class="tag">45–55 m²</span><span class="tag">2-room</span><span class="tag">Period building</span></div><p class="desc">Classic Kalamaja character; balcony or terrace standard in renovated stock.</p></div><div class="lst"><span class="place">Kalamaja, new waterfront development</span><span class="price">€280,000–350,000</span><div class="tags"><span class="tag">50–65 m²</span><span class="tag">2BR</span><span class="tag">New build</span><span class="tag">Sea view option</span></div><p class="desc">Near Lennusadam Seaplane Harbour — modern finishes, stronger energy class.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=24.715,59.427,24.743,59.452&layer=mapnik&marker=59.4398,24.729" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Kalamaja, Tallinn — tram upgrade in design phase; 14–20% negotiating room on asking prices</p></div>
+  </div>
+</div></section>
+<section class="city" id="ghent"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">BE · GHENT</span><h2 class="cn">Ghent</h2><div class="hood">Patershol · Prinsenhof · Citadelpark fringe</div><p class='dnote'>Tier II: Belgium's Flanders registration tax (12.5% on resale) is the single worst acquisition cost on this list — €37,500 in the hole on a €300k purchase before you've furnished anything.</p></div>
+  <div class="vcol"><span class="badge t2">Tier II</span> <span class="badge watch">Watch</span><span class="vnote">No STR ban; Flemish VAT registration required above commercial threshold</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Ghent is the most underrated city in northwest Europe for this brief — medieval canal quarter, car-free center, Flemish Gothic architecture, 35 minutes from Brussels by train. Patershol is the charming cobblestone quarter; the Citadelpark fringe near Sint-Pieters station is calmer and leafier. The lifestyle scores very well; the tax does not. Unlock condition: citizenship through and 90-day clock removed; 12.5% entry cost amortises over a 10-year hold.</p>
+    <div class="listings"><div class="lst"><span class="place">Patershol / Historic center</span><span class="price">€280,000–360,000</span><div class="tags"><span class="tag">1–2BR</span><span class="tag">Period building</span><span class="tag">Terrace or roof access</span></div><p class="desc">Renovated units near Graslei/Korenlei quays; some Art Nouveau buildings with large windows.</p></div><div class="lst"><span class="place">Citadelpark fringe / Sint-Pieters</span><span class="price">€250,000–320,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">Belle Époque</span><span class="tag">Park proximity</span></div><p class="desc">Stately older buildings near the station and museums; balconies common on upper floors.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=3.71,51.047,3.736,51.072&layer=mapnik&marker=51.0596,3.7232" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Patershol, Ghent — medieval quarter; 12.5% Flanders registration tax is the primary obstacle</p></div>
+  </div>
+</div></section>
+<section class="city" id="thessaloniki"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">GR · THESSALONIKI</span><h2 class="cn">Thessaloniki</h2><div class="hood">Kalamaria (not the central city)</div><p class='dnote'>Tier II: Athens already in Tier I. On July 1, 2026 the First Municipal Community STR freeze extended to Thessaloniki's central neighborhoods.</p></div>
+  <div class="vcol"><span class="badge t2">Tier II</span> <span class="badge watch">Watch</span><span class="vnote">STR freeze in First Municipal Community from Jul 1, 2026; Kalamaria is outside it</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">As of July 1, 2026 Thessaloniki's historic core joined Athens under an STR registration freeze, with minimum fines of €20,000 for violations. Kalamaria, an affluent southeastern coastal municipality, is separate from the First Municipal Community and sits outside the freeze. Seafront promenade, metro-connected, family-oriented. Median price: ~€2,450/m². Yields: 3.0–4.2% long-term; higher for medium-term. Sells within 45–60 days of listing at current demand.</p>
+    <div class="listings"><div class="lst"><span class="place">Kalamaria, coastal / Aretsou promenade</span><span class="price">€250,000–320,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">~100 m²</span><span class="tag">Sea/garden view</span><span class="tag">Parking</span></div><p class="desc">At ~€2,450/m² median, a 100 m² unit sits at ~€245k — solid entry point.</p></div><div class="lst"><span class="place">Kalamaria, premium / seafront</span><span class="price">€320,000–400,000</span><div class="tags"><span class="tag">2–3BR</span><span class="tag">Seafront</span><span class="tag">Renovated</span></div><p class="desc">Sells fast at current demand; verify availability window before committing.</p></div></div>
+    <p class="cnote">Ano Poli (Upper Town): stunning neighborhood — cobblestone, Byzantine walls, panoramic views — but inside the new freeze zone. Long-term lease only while moratorium holds.</p>
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=22.94,40.569,22.966,40.595&layer=mapnik&marker=40.5818,22.9533" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Kalamaria, Thessaloniki — outside the central STR freeze; separate municipality</p></div>
+  </div>
+</div></section>
+<section class="city" id="naples"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">IT · NAPLES</span><h2 class="cn">Naples</h2><div class="hood">Chiaia · Posillipo</div><p class='dnote'>Tier II: Italy already has Bologna in Tier I. The citizenship lawsuit is filed in Naples — creating recurring, documentable legitimate presence independent of tourism days.</p></div>
+  <div class="vcol"><span class="badge t2">Tier II</span> <span class="badge open">Open</span><span class="vnote">Same national CIN regime as Bologna; no city-level STR ban</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Chiaia is the leafy, elite reading of Naples: the Lungomare, Piazza dei Martiri, tree-lined streets running up toward the Posillipo hill. A renovated 2BR in Chiaia runs roughly €250k–€350k where comparable quality in central Bologna would be €320k–€380k — same Italian CIN registration, same 21% flat-rate cedolare secca on first-property STR income, notably lower entry price. The Naples lawsuit also gives you a documentable non-tourist reason for Schengen trips.</p>
+    <div class="listings"><div class="lst"><span class="place">Chiaia, Via dei Mille / Piazza Amedeo</span><span class="price">€280,000–360,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">80–100 m²</span><span class="tag">Balcony</span><span class="tag">Period palazzo</span></div><p class="desc">Period palazzi with elevator; views toward the Castel dell'Ovo.</p></div><div class="lst"><span class="place">Posillipo (uphill from Chiaia)</span><span class="price">€250,000–330,000</span><div class="tags"><span class="tag">1–2BR</span><span class="tag">Hill views</span><span class="tag">Quiet</span><span class="tag">Leafy</span></div><p class="desc">Elevated residential above Chiaia; genuinely calm, green, panoramic, few tourists.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=14.218,40.822,14.243,40.847&layer=mapnik&marker=40.8343,14.2305" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Chiaia, Naples — better value per m² than Bologna; citizenship case synergy</p></div>
+  </div>
+</div></section>
+<section class="city" id="lyon"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">FR · LYON</span><h2 class="cn">Lyon</h2><div class="hood">Croix-Rousse</div><p class='dnote'>Tier II: Best lifestyle score of all 25 cities. Worst tax math for non-residents. Watchlist pending French non-resident surcharge legislation.</p></div>
+  <div class="vcol"><span class="badge t2">Tier II</span> <span class="badge caution">Caution</span><span class="vnote">7.5% droits de mutation; non-resident CGT 36.2%; surcharge proposals pending</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Croix-Rousse is a hilltop village quarter above Lyon's Presqu'île: traboules (silk-workers' hidden passageways), a weekly market, independent cafés, a creative community. Lyon is 2 hours TGV from Paris, a world food city, and significantly more affordable than the capital. The obstacle is France's structural tax architecture for non-residents: 7.5% acquisition tax, 36.2% capital gains tax at exit vs 17.2% for French residents, and a proposed non-resident secondary property surcharge. Unlock condition: if the surcharge legislation is defeated or significantly reduced, Lyon/Croix-Rousse leapfrogs most cities on both lists on pure lifestyle grounds.</p>
+    <div class="listings"><div class="lst"><span class="place">Croix-Rousse plateau, period building</span><span class="price">€280,000–380,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">70–90 m²</span><span class="tag">Traboule access</span><span class="tag">Balcony</span></div><p class="desc">Classic Canut-era buildings; exposed beams and stone common in renovated units.</p></div><div class="lst"><span class="place">Croix-Rousse, recently renovated</span><span class="price">€320,000–400,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">Renovated</span><span class="tag">City or hill view</span></div><p class="desc">Fully renovated with modern kitchens; stronger STR appeal.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=4.815,45.767,4.84,45.792&layer=mapnik&marker=45.7796,4.8274" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Croix-Rousse, Lyon — best lifestyle score of 25 cities; watchlist pending French tax legislation</p></div>
+  </div>
+</div></section>
+<section class="city" id="gdansk"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">PL · GDAŃSK</span><h2 class="cn">Gdańsk</h2><div class="hood">Wrzeszcz · Oliwa</div><p class='dnote'>Tier II: Kraków fills the Poland slot in Tier I. Gdańsk is the second Polish pick — stronger on the 'leafy and well-connected' criteria.</p></div>
+  <div class="vcol"><span class="badge t2">Tier II</span> <span class="badge open">Open</span><span class="vnote">Same apartment permit exemption as Kraków; no STR ban; seasonal demand profile</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Gdańsk is a Hanseatic city on the Baltic: extraordinary brick Gothic architecture in the Główne Miasto, but the livable neighborhoods are Wrzeszcz (tram-connected, tree-lined avenues, mature linden trees) and Oliwa (quieter, cathedral and park, next to the Zoo). Strong seasonal STR market driven by Baltic coast summer tourism; B2B medium-term rental to Amazon, Intel, PGNiG, and other Tricity employers provides a solid winter fallback. Prices notably below Kraków's historic center.</p>
+    <div class="listings"><div class="lst"><span class="place">Wrzeszcz, tram corridor</span><span class="price">€180,000–240,000</span><div class="tags"><span class="tag">2–3 rooms</span><span class="tag">60–75 m²</span><span class="tag">Period building</span></div><p class="desc">Period buildings on and near Grunwaldzka Ave — some of Gdańsk's most pleasant residential streets.</p></div><div class="lst"><span class="place">Oliwa</span><span class="price">€200,000–280,000</span><div class="tags"><span class="tag">2–3 rooms</span><span class="tag">Quiet</span><span class="tag">Park proximity</span></div><p class="desc">Near Oliwa Cathedral and park; 15-minute tram to central Gdańsk.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=18.596,54.363,18.622,54.388&layer=mapnik&marker=54.3754,18.6091" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Wrzeszcz, Gdańsk — seasonal STR peak; strong B2B medium-term demand from Tricity employers</p></div>
+  </div>
+</div></section>
+<section class="city" id="split"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">HR · SPLIT</span><h2 class="cn">Split</h2><div class="hood">Meje · Manuš</div><p class='dnote'>Tier II: Non-EU Ministry of Justice approval (1–6 months) is the obstacle. Italian citizenship removes this friction entirely — becomes a Tier I city the moment the Naples case resolves.</p></div>
+  <div class="vcol"><span class="badge t2">Tier II</span> <span class="badge caution">Caution</span><span class="vnote">Non-EU buyers need Ministry of Justice approval; 3% transfer tax</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Croatia's Dalmatian coast has one of Europe's strongest STR markets — Adriatic summer demand drives occupancy other cities can't match. Meje is the calm, elegant western peninsula of Split: villa-lined streets, proximity to the Meštrovićeva Galerija, 10-minute walk along the water to Diocletian's Palace. Non-EU buyers must apply through the Ministry of Interior referencing the US-Croatia reciprocity agreement, and wait 1–6 months. The same Italian citizenship case pending in Naples removes this friction entirely.</p>
+    <div class="listings"><div class="lst"><span class="place">Meje</span><span class="price">€250,000–380,000</span><div class="tags"><span class="tag">1–2BR</span><span class="tag">Sea or green view</span><span class="tag">Residential street</span></div><p class="desc">Most prestigious quiet residential address in Split; market thin but available.</p></div><div class="lst"><span class="place">Manuš</span><span class="price">€200,000–300,000</span><div class="tags"><span class="tag">1–2BR</span><span class="tag">Renovated</span><span class="tag">10 min to Old Town</span></div><p class="desc">More residential than the palace tourist zone; strong seasonal STR market.</p></div></div>
+    <p class="cnote">Unlock condition: Italian citizenship = EU citizen = Ministry approval removed. Split becomes straightforward the moment the Naples case resolves.</p>
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=16.414,43.491,16.44,43.515&layer=mapnik&marker=43.503,16.427" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Meje, Split — Ministry approval required now; EU citizenship clears it entirely</p></div>
+  </div>
+</div></section>
+<div class="wrap"><div class="tier-hdr"><h2>Tier III — Emerging &amp; Specialist Picks <span style="font-size:0.6em;font-style:normal;opacity:0.7;">(7 cities)</span></h2></div></div>
+<section class="city" id="brno"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">CZ · BRNO</span><h2 class="cn">Brno</h2><div class="hood">Královo Pole · Žabovřesky</div><p class='dnote'>Tier III: Prague fills the Czech slot. Brno is Czechia's second city — meaningfully cheaper, better yields, identical legal framework.</p></div>
+  <div class="vcol"><span class="badge t3">Tier III</span> <span class="badge open">Open</span><span class="vnote">No nationality restriction on apartments; same process as Prague; 0% transfer tax</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Brno is a university city of 380,000 anchored by Masaryk University and Brno University of Technology, with major corporate employers (Honeywell, Red Hat, IBM, Siemens) generating strong long-term rental demand from professionals. Královo Pole and Žabovřesky are the 'safest and most pleasant residential areas' per local expat guidance — tram-connected, leafy, and well-maintained. Gross yields in Brno run 4–5.5%, better than Prague's 3.5–4.5% due to lower purchase prices relative to rents. Same zero transfer tax (abolished 2020).</p>
+    <div class="listings"><div class="lst"><span class="place">Královo Pole</span><span class="price">~€180,000–250,000</span><div class="tags"><span class="tag">2–3 room</span><span class="tag">55–75 m²</span><span class="tag">Tram access</span></div><p class="desc">Expat and professional pocket; Masaryk University nearby drives consistent rental demand.</p></div><div class="lst"><span class="place">Center, Pekařská (functionalist 1936)</span><span class="price">~€150,000–200,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">Balcony</span><span class="tag">Inner garden view</span></div><p class="desc">Renovated historic building; quiet microclimate in summer, city tram in 5 min.</p></div><div class="lst"><span class="place">Žabovřesky</span><span class="price">~€170,000–230,000</span><div class="tags"><span class="tag">2–3 room</span><span class="tag">Tram lines 3/9/11/12</span><span class="tag">Green</span></div><p class="desc">Residential, quiet; one of Brno's most consistently comfortable outer neighborhoods.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=16.582,49.201,16.608,49.227&layer=mapnik&marker=49.214,16.595" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Královo Pole, Brno — better yields than Prague; same legal framework; lower entry price</p></div>
+  </div>
+</div></section>
+<section class="city" id="wroclaw"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">PL · WROCŁAW</span><h2 class="cn">Wrocław</h2><div class="hood">Śródmieście · Nadodrze · Biskupin (Krzyki)</div><p class='dnote'>Tier III: Poland has Kraków (T1) and Gdańsk (T2). Wrocław is the third Polish pick — arguably the most architecturally impressive and livable of the three.</p></div>
+  <div class="vcol"><span class="badge t3">Tier III</span> <span class="badge open">Open</span><span class="vnote">Apartments: no permit required. Same 2% PCC as Kraków.</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Wrocław ranks third after Kraków and Warsaw for foreign property investment in Poland, with demand growing consistently. The old market square (Rynek) is one of the most beautiful in Central Europe; Śródmieście and Nadodrze offer renovated tenements with character; Biskupin (Krzyki) is the green investment choice — quieter, with park areas and strong family-rental demand. Average Wrocław price: ~€2,000/m².</p>
+    <div class="listings"><div class="lst"><span class="place">Śródmieście, near Mieszczański Park</span><span class="price">~€220,000–290,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">Dual balconies</span><span class="tag">Park view</span><span class="tag">AC</span></div><p class="desc">Apartments with two balconies — one overlooking park, one overlooking courtyard.</p></div><div class="lst"><span class="place">Nadodrze (gentrifying)</span><span class="price">~€180,000–240,000</span><div class="tags"><span class="tag">2–3 rooms</span><span class="tag">Renovated tenement</span></div><p class="desc">Former working-class quarter undergoing the Kazimierz-equivalent transformation; best entry pricing centrally.</p></div><div class="lst"><span class="place">Biskupin (Krzyki)</span><span class="price">~€200,000–270,000</span><div class="tags"><span class="tag">2–3 rooms</span><span class="tag">Green area</span><span class="tag">Family rental demand</span></div><p class="desc">Leafy, sought-after for long-term family leases; one of Wrocław's most desirable residential pockets.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=17.025,51.094,17.051,51.12&layer=mapnik&marker=51.107,17.038" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Śródmieście, Wrocław — third Polish pick; one of Central Europe's most impressive city centers</p></div>
+  </div>
+</div></section>
+<section class="city" id="sofia"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">BG · SOFIA</span><h2 class="cn">Sofia</h2><div class="hood">Lozenets · Oborishte · Iztok</div><p class='dnote'>Tier III: Bulgaria adopted the euro in January 2026 — removes currency risk. Non-EU buyers: apartments purchasable directly; houses with land require a Bulgarian company structure.</p></div>
+  <div class="vcol"><span class="badge t3">Tier III</span> <span class="badge open">Open</span><span class="vnote">Apartments: buy directly as non-EU. Flat 10% income tax. 3% transfer tax.</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Sofia is the best-value EU capital on the full list of 25. Lozenets, bordered by Borisova Gradina and Loven Park, metro-connected via Vitosha station, is where wealthy Bulgarians, expats, and foreign executives actually live. Average citywide: ~€2,300/m²; prime Lozenets/Oborishte: €3,500–€4,000+/m². 2BR average rent: ~€740/month citywide, €1,000–1,500+ in prime Lozenets. Bulgaria adopted the euro January 2026 — no more FX conversion. STR income taxed at 10% flat. Gross yields in Lozenets: 3.5–4.5%; occupancy above 90% in prime addresses.</p>
+    <div class="listings"><div class="lst"><span class="place">Lozenets, near South Park metro</span><span class="price">€180,000–250,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">~70 m²</span><span class="tag">Metro access</span><span class="tag">Park proximity</span></div><p class="desc">Near Vitosha metro station; expat-friendly area with international schools and US Embassy nearby.</p></div><div class="lst"><span class="place">Oborishte (prime central)</span><span class="price">€280,000–380,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">90 m²</span><span class="tag">Prestige address</span></div><p class="desc">Prime zone; strongest capital appreciation potential; diplomat and exec tenant base.</p></div><div class="lst"><span class="place">Krastova Vada (emerging)</span><span class="price">€150,000–220,000</span><div class="tags"><span class="tag">2–3BR</span><span class="tag">New build</span><span class="tag">Near Vitosha</span><span class="tag">5.5–7% yield</span></div><p class="desc">Mixed-use developments at foot of Vitosha; metro Line 3 extension coming.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=23.315,42.66,23.341,42.686&layer=mapnik&marker=42.673,23.328" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Lozenets, Sofia — bordered by parks; metro access; Bulgaria adopted euro Jan 2026</p></div>
+  </div>
+</div></section>
+<section class="city" id="malta"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">MT · SLIEMA / MALTA</span><h2 class="cn">Malta — Sliema</h2><div class="hood">Sliema seafront · Tigné Point (SDA)</div><p class='dnote'>Tier III: The only English-speaking EU country on this list. Common Law-derived legal system — most accessible purchase process for a US buyer. AIP permit for non-EU buyers outside SDAs, or buy freely inside SDAs with no limit on number of properties.</p></div>
+  <div class="vcol"><span class="badge t3">Tier III</span> <span class="badge watch">Watch</span><span class="vnote">AIP permit outside SDAs (6–10 weeks, min €175k). SDAs: no permit, unlimited properties.</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Malta is the only EU country on this list where English is an official language and the legal system is Common Law-derived. STR is permitted and active. Rental income taxed at 15% flat. No municipal property tax. No buyer agency fee — sellers pay. A 3BR sea-view apartment in Sliema at €300k can yield around 7% gross. SDA complexes (Tigné Point, Fort Cambridge) allow non-EU buyers to purchase and own multiple properties without an AIP permit — no per-buyer limit applies. Double-tax treaty with the US.</p>
+    <div class="listings"><div class="lst"><span class="place">Sliema, 1BR with balcony</span><span class="price">€250,000–320,000</span><div class="tags"><span class="tag">1BR</span><span class="tag">Seafront or inland</span><span class="tag">AC</span><span class="tag">Promenade access</span></div><p class="desc">Sliema's Golden Mile promenade; Valletta ferry 5 min, main bus hub on doorstep.</p></div><div class="lst"><span class="place">Tigné Point (SDA) — no permit needed</span><span class="price">€300,000–400,000</span><div class="tags"><span class="tag">1–2BR</span><span class="tag">Sea views</span><span class="tag">Gated</span><span class="tag">No AIP limit</span></div><p class="desc">Non-EU buyers can own multiple SDA units. Strongest rental demand in Malta.</p></div></div>
+    <p class="cnote">AIP limit: for non-SDA properties, non-EU buyers are limited to one property in Malta. SDA developments (Tigné Point, Fort Cambridge, Portomaso) remove this limit entirely.</p>
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=14.49,35.9,14.516,35.926&layer=mapnik&marker=35.913,14.503" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Sliema, Malta — only EU English Common Law country on the list; 15% flat rental income tax</p></div>
+  </div>
+</div></section>
+<section class="city" id="catania"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">IT · CATANIA, SICILY</span><h2 class="cn">Catania</h2><div class="hood">Baroque center · Via Etnea corridor</div><p class='dnote'>Tier III: Italy has Bologna (T1) and Naples (T2). Catania is the Italian value play — dramatically cheaper than either, with distinctive lava-stone Baroque character and the same CIN framework.</p></div>
+  <div class="vcol"><span class="badge t3">Tier III</span> <span class="badge open">Open</span><span class="vnote">Italian national CIN framework applies; no city-level STR ban in Catania</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Catania is Sicily's second city: UNESCO-listed Baroque architecture rebuilt in lava stone after the 1693 earthquake, a working port, a famous daily fish market (La Pescheria), and Mount Etna as a permanent backdrop. The most affordable city on this list within the Italian CIN framework. A renovated 1–2BR in the historic center runs €80,000–€160,000 — leaving the largest combined budget margin of any Italian city by far. The same 9% seconda casa transfer tax applies, but on a much smaller base price. Strong summer STR market from cultural tourism and Etna trekking.</p>
+    <div class="listings"><div class="lst"><span class="place">Baroque center, Via Crociferi corridor</span><span class="price">€80,000–130,000</span><div class="tags"><span class="tag">1–2BR</span><span class="tag">60–80 m²</span><span class="tag">Lava stone building</span><span class="tag">Balcony</span></div><p class="desc">Renovated lava-stone buildings in the Baroque district; period detail with modern systems.</p></div><div class="lst"><span class="place">Via Etnea corridor (upgraded stock)</span><span class="price">€130,000–200,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">Renovated to modern standard</span><span class="tag">Terrace</span></div><p class="desc">Main boulevard; renovated stock better-equipped for STR.</p></div></div>
+    <p class="cnote">The 9% seconda casa transfer tax is more easily absorbed here: on a €120k purchase, 9% is €10,800 vs €27,000 on a €300k Bologna unit. The budget math in Catania is genuinely different.</p>
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=15.078,37.49,15.104,37.516&layer=mapnik&marker=37.503,15.091" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Catania, Sicily — lava-stone Baroque; most affordable Italian city on the list; Etna backdrop</p></div>
+  </div>
+</div></section>
+<section class="city" id="plovdiv"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">BG · PLOVDIV</span><h2 class="cn">Plovdiv</h2><div class="hood">Kapana Creative District · Old Town fringe</div><p class='dnote'>Tier III: Sofia fills the Bulgaria slot. Plovdiv is the budget king of the entire 25-city list — smallest absolute entry price, genuine UNESCO character, EU member.</p></div>
+  <div class="vcol"><span class="badge t3">Tier III</span> <span class="badge open">Open</span><span class="vnote">Same framework as Sofia; 3% transfer tax; apartments directly purchasable by non-EU buyers</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Plovdiv is a UNESCO Creative City of Design, European Capital of Culture 2019, and the oldest continuously inhabited city in Europe — and barely on the radar of international buyers. Kapana ('The Trap') is the pedestrianized arts and café district, the source of the city's STR demand. Prices in Kapana for period buildings: ~€700–€1,200/m² — a 70 m² renovated unit with balcony can be had for €50,000–€85,000. Same Bulgarian rules as Sofia: apartments purchasable directly by non-EU buyers. Bulgaria's euro adoption (January 2026) removes FX risk.</p>
+    <div class="listings"><div class="lst"><span class="place">Kapana district, period building</span><span class="price">€50,000–90,000</span><div class="tags"><span class="tag">1–2BR</span><span class="tag">Fixer to renovated</span><span class="tag">Central pedestrianized</span></div><p class="desc">The most affordable entry on the full 25-city list. Leaves €160,000–€310,000 for renovation, furnishing, and further acquisitions.</p></div><div class="lst"><span class="place">Old Town fringe, upgraded unit</span><span class="price">€90,000–140,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">Renovated</span><span class="tag">STR-ready</span></div><p class="desc">Fully renovated near the Old Town hills; good STR occupancy in summer cultural season.</p></div></div>
+    <p class="cnote">Plovdiv is a genuinely small city (~350,000) — STR market is meaningful but seasonal and thinner than Sofia or any Western European city. Budget carefully for off-season vacancy.</p>
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=24.735,42.135,24.761,42.161&layer=mapnik&marker=42.148,24.748" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Kapana, Plovdiv — budget king of 25 cities; UNESCO Creative City; ~€700–1,200/m²</p></div>
+  </div>
+</div></section>
+<section class="city" id="antwerp"><div class="wrap">
+  <div class="chead"><div class="left"><span class="ccode">BE · ANTWERP</span><h2 class="cn">Antwerp</h2><div class="hood">Zurenborg · 't Eilandje</div><p class='dnote'>Tier III: Ghent is in Tier II. Antwerp has a stronger lifestyle case — more diverse, better value per m² than Ghent — but carries identical Belgian Flanders tax friction.</p></div>
+  <div class="vcol"><span class="badge t3">Tier III</span> <span class="badge watch">Watch</span><span class="vnote">Same 12.5% Flanders registration tax as Ghent; no STR ban in Antwerp</span></div></div>
+  
+  <div class="cbody" ><div>
+    <p class="rat">Zurenborg is one of the most architecturally spectacular neighborhoods in northern Europe — an extraordinary concentration of late 19th-century styles (Art Nouveau, Art Deco, Baroque revival, Neogothic) within a few walkable blocks, centered on Cogels-Osylei, known locally as one of Belgium's most beautiful streets. It's quieter than Ghent's center, leafier, and slightly better value per m². 't Eilandje (docklands) is the contemporary alternative — MAS museum-anchored, converted warehouses, walking distance to the main station. Same Flanders 12.5% registration tax as Ghent; same 10-year hold unlock condition.</p>
+    <div class="listings"><div class="lst"><span class="place">Zurenborg, Cogels-Osylei area</span><span class="price">€280,000–370,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">Period villa apartment</span><span class="tag">Art Nouveau detail</span></div><p class="desc">Ornate facades, high ceilings, period character — the most architecturally distinctive residential neighborhood in the Belgian list.</p></div><div class="lst"><span class="place">'t Eilandje (docklands)</span><span class="price">€250,000–340,000</span><div class="tags"><span class="tag">2BR</span><span class="tag">Converted industrial</span><span class="tag">Terrace</span><span class="tag">Modern</span></div><p class="desc">Renovated dock buildings; higher ceilings, larger terraces than typical Antwerp apartments.</p></div></div>
+    
+  </div>
+  <div><div class="mapembed"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=4.405,51.194,4.431,51.22&layer=mapnik&marker=51.207,4.418" allowfullscreen loading="lazy"></iframe></div><p class="mapcap">Zurenborg, Antwerp — one of northern Europe's most spectacular Belle Époque neighborhoods; same Belgian tax friction as Ghent</p></div>
+  </div>
+</div></section>
+<footer><div class="wrap">
+  <div class="rule"></div>
+  <p><strong>Sequencing across all 25 cities:</strong> Tbilisi is the only entry that costs zero Schengen days — study it early regardless of tier. Split and Croatia broadly are the cities most directly rewarded by citizenship resolving (Ministry approval friction disappears entirely). Lyon is the watchlist entry pending French non-resident tax legislation. In the Eastern European tier, the core question is whether you want lower absolute prices (Plovdiv, Catania, Ljubljana, Vilnius) or stronger rental demand and liquidity (Kraków, Wrocław, Sofia/Lozenets). Those are different bets.</p>
+  <p><strong>On acquisition costs:</strong> The gap between Italy/Portugal/France (11–17% true entry cost) and Eastern European markets (3–7%) is large enough to change how many properties the same capital budget can support. On a €1M total budget, the difference between buying in Belgium vs. Estonia is roughly one entire additional property.</p>
+  <p><strong>On the Italian 9% rate:</strong> This is the single most important non-obvious fact in this file. The prima casa exemption (2%) requires Italian residence and is intended for primary-residence purchases by Italian residents. As a US citizen without Italian residency at time of purchase — even with citizenship pending — you pay 9% on resale properties. Bologna and Naples listings look better value on headline price than they actually are once this is factored in. Plan accordingly.</p>
+  <p><strong>Regulatory currency:</strong> STR rules, buyer restrictions, and zone-level freezes move fast — Thessaloniki's freeze extended July 1, 2026, less than a week before this file was compiled. Re-verify zone-level status with a local solicitor before any purchase decision, not just at the city level.</p>
+  <p style="margin-top:18px;opacity:0.45;font-size:12px;">File compiled July 2026. Prices and listings are point-in-time research from Immobiliare.it, Idealista (PT/IT), Otodom.pl, Sreality.cz, Nepremicnine.net, Aruodas.lt, SS.lv, Etuovi.com, Myhome.ge, KV.ee, Spitogatos.gr, Imot.bg, Maltapark.com, Njuskalo.hr, SeLoger.com, and Bezrealitky.cz. All figures are estimates — confirm with a local notary and qualified international accountant before any purchase decision.</p>
+</div></footer>
+</body></html>
